@@ -1,20 +1,20 @@
 <h1>Login</h1>
 <%= form_tag '/login' do %>
-
-  <p>
-    <%= label_tag 'email' %>
+  <div class="login-form">
+  <div class="field">
+    <%= label_tag 'email' %> 
     <%= email_field_tag 'email' %>
-  </p>
+  </div>
 
-  <p>
-    <%= label_tag 'password' %>
+  <div class="field">
+    <%= label_tag 'password' %> 
     <%= password_field_tag 'password' %>
-  </p>
-  
-  <p>
+  </div>
+  </div>
+  <div class="field">
     <%= submit_tag 'Login', :class => "btn btn-success" %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= link_to "forgotten password?", new_password_reset_path %>
-  </p>
+  </div>
 <% end %>

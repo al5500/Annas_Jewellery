@@ -10,14 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="product-form">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :size => "50x5" %>
   </div>
   <div class="field cl_wham">
     <%= f.label :Image %><br>
@@ -33,5 +33,6 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>

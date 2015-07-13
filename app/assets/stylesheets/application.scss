@@ -58,9 +58,9 @@ body {
   display: inline-block;
 }
 .intro{
-  display: inline-block;
+  position: relative;
   background-color: #D9D9FF;
-  width: 800px;
+  width: 100%;
   border:double 5px #CC66CC;
   -moz-border-radius-topleft: 5px;
   -moz-border-radius-topright:5px;
@@ -93,7 +93,7 @@ body {
 
 
 .navbar-default .navbar-nav > li > a {
-  margin-right: 50px;
+  margin-right: 0px;
 }
 
 .balls {
@@ -120,5 +120,17 @@ li {
   border-top: 1px solid #595;
 }
 
+.product-form {
+  display: inline-block;
+}
 
+.navbar-default .navbar-toggle {
+  border-color: #CC66CC;
+}
+
+.cart-view {
+  position: relative;
+  display: inline-table;
+  text-align: -webkit-center;
+}
 

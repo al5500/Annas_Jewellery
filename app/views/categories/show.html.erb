@@ -4,15 +4,18 @@
   <strong>Category:</strong>
   <%= @category.name %>
 </p>
-<div class="products">
+
 <p>
   <% @products.each do |product| %>
+  <div class="products">
     <strong>Product name:</strong> <%= link_to product.name, product_path %><br>
     <strong>Description:</strong> <%= product.description %><br>
-    <%= cl_image_tag(product.cl_id, :width => 100, :height => 150, :crop => :fill) %> 
+    <%= cl_image_tag(product.cl_id, :width => 100, :height => 150, :crop => :fill) %>  <br>
+    <strong>Price:</strong><%= number_to_currency(product.price, :unit => "$") %>
+    <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+  </div>  
   <% end %>
 </p>
-</div>
 <% if @current_user.present? && @current_user.admin? %>
   <%= link_to 'Edit', edit_category_path(@category) %> |
 <% end %>
