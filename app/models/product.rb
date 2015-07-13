@@ -18,6 +18,16 @@ class Product < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_line_item
 
+  def self.search(search)
+    search = '%' + search + '%'
+    Product.where( [
+      "name ILIKE :query or
+       description ILIKE :query
+      ",
+      { :query => search }
+    ] )
+  end
+
   private
   def ensure_not_referenced_by_any_line_item
     if line_items.empty?

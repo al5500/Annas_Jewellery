@@ -5,11 +5,27 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+
+    if params[:search_products]
+      @products = Product.search(params[:search_products]).order("created_at DESC")
+    else
+      @products = Product.all.order('created_at DESC')
+    end
   end
 
+
+  def search  
+    if params[:commit] == "Find Product"
+      @products = Product.search( params[:search] )
+      render :index
+    else
+      @products = Product.search( params[:search] )
+      render :search
+    end
+  end
   # GET /products/1
   # GET /products/1.json
-  def show
+  def show 
   end
 
   # GET /products/new

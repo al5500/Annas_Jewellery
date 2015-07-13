@@ -49,7 +49,8 @@
 
 Rails.application.routes.draw do
 
-  root :to => 'categories#index'
+  root :to => 'pages#landing'
+
   resources :line_items
   resources :carts
   resources :products
@@ -60,4 +61,6 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
+  get '/about' => 'pages#about'
 end

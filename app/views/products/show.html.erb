@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="products">
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -11,6 +11,7 @@
 </p>
 
 <p>
+  <strong>Image:</strong>
   <%= cl_image_tag(@product.cl_id, :width => 100, :height => 150, :crop => :fill) %>
 </p>
 
@@ -20,9 +21,15 @@
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @product.category_id %>
+  <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<p>
+  <strong>Category:</strong>
+  <% if @product.category %><%= @product.category.name %><% end %>
+</p>
+<% if @current_user.present? && @current_user.admin? %>
+  <%= link_to 'Edit', edit_product_path(@product) %> 
+<% end %> 
+</div> <br>
 <%= link_to 'Back', products_path %>

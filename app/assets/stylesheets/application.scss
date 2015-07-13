@@ -15,3 +15,110 @@
  *= require_tree .
  *= require_self
  */
+.container {
+  margin: 0 auto;
+  text-align: center;
+  list-style: none;
+  background-color: whitesmoke;
+}
+
+.container-fluid{
+  background-color: #D9D9FF;
+  box-shadow: 0px 0px 15px black;
+  border: solid 4px #CC66CC;
+}
+body {
+  background-color: whitesmoke;
+}
+
+.products{
+  display: inline-block;
+  background-color: #D9D9FF;
+  width: 300px;
+  overflow-y: scroll;
+  height: 300px;
+  border:double 5px #CC66CC;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright:5px;
+  -moz-border-radius-bottomleft:5px;
+  -moz-border-radius-bottomright:5px;
+  -webkit-border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+}
+
+.entry{
+  width: 300px;
+  vertical-align: top;
+  display: inline-block;
+}
+.intro{
+  display: inline-block;
+  background-color: #D9D9FF;
+  width: 800px;
+  border:double 5px #CC66CC;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright:5px;
+  -moz-border-radius-bottomleft:5px;
+  -moz-border-radius-bottomright:5px;
+  -webkit-border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: white;
+  background-color: #CC66CC;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #CC66CC;
+  color: #555;
+}
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  background-color: #D9D9FF;
+}
+
+
+.navbar-default .navbar-nav > li > a {
+  margin-right: 50px;
+}
+
+.balls {
+  right: -220px;  
+}
+
+p, div.price_line {
+  margin-left: 100px;
+  margin-top: 0.5em;
+  margin-bottom: 0.8em;
+}
+
+li {
+  list-style: none;
+}
+#store .cart_title {
+  font: 120% bold;
+}
+#store .item_price, #store .total_line {
+  text-align: right;
+}
+#store .total_line .total_cell {
+  font-weight: bold;
+  border-top: 1px solid #595;
+}
+
+
+
