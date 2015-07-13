@@ -33,7 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'rails_12factor', group: :production
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-stack_explorer'
