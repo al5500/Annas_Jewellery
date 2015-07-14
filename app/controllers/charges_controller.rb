@@ -16,6 +16,9 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe Customer',
       :currency => 'aud'
     )
+
+    # render layout :application
+
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to root_path

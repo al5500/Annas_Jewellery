@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-<div class="products">
-  <h2>Thanks, you paid <%= number_to_currency( @amount / 100 ) %> amount!</h2>
-</div>
+
+<h4>Thanks, you paid <%= number_to_currency( @amount / 100 ) %>, your receipt will be emailed to you shortly. :)</h4>
+
 <% session[:cart_id] = nil %>
 
 <%= link_to 'Back Home', root_path %>
