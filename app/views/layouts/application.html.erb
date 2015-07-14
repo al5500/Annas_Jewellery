@@ -36,7 +36,7 @@
       </li>
       <%== smart_nav %>
       <li>
-      <% if @current_user.present? %>
+      <% if @current_user.present? && session[:cart_id].present? %>
         <%= link_to 'Your Cart', cart_path(session[:cart_id]) %>
       <% end %>
       </li>
