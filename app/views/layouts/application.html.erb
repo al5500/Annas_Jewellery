@@ -43,10 +43,10 @@
       <li>
       <div class="input-group balls"> 
       <%= form_tag(products_path, :method => "get", id: "search-products", :class => "navbar-form navbar-left", :role => "search") do %>
-      
+      <div class="form-group">
         <%= text_field_tag :search_products, params[:search], value: params[:search], :class=>"form-control", placeholder: "Search Products..."%>
+      </div>
         <%= submit_tag "Search", :class => "btn btn-default" %> 
-     
       <% end %>
       </div>
       </li>
