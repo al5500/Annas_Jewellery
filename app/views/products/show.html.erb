@@ -1,20 +1,34 @@
 <p id="notice"><%= notice %></p>
-<div class="products">
-  <strong>Name:</strong>
-  <%= @product.name %> <br>
-  <strong>Description:</strong>
-  <%= @product.description %> <br>
-  <strong>Image:</strong>
-  <%= cl_image_tag(@product.cl_id, :width => 100, :height => 150, :crop => :fill) %> <br>
-  <strong>Price:</strong>
-  <%= number_to_currency(@product.price, :unit => "$") %> <br>
-  <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
+<% if @current_user.present? && @current_user.admin? %>
+  <%= link_to 'Edit Product', edit_product_path(@product) %> <br>
+<% end %> <hr>
+  
+<%= cl_image_tag(@product.cl_id, :width => 400, :height => 400, :class => 'imgg') %> 
+<div class="text-right">
+  <h2>
+    <%= @product.name %> <br>
+  </h2>
   <strong>Category:</strong>
   <% if @product.category %>
-    <%= @product.category.name %> <br>
+    <%= @product.category.name %>
   <% end %>
-  <% if @current_user.present? && @current_user.admin? %>
-    <%= link_to 'Edit Product', edit_product_path(@product) %> 
-  <% end %> 
-</div> <br>
+</div>  
+<div class="well well-lg">
+  <strong>Description:</strong>
+  <%= @product.description %> <br>
+</div>
+<div class="well">
+    I do my best to ensure that my jewellery arrives to you in the same condition it left me so I carefully bubblewrap everything before gift-wrapping.  If by any chance the item has been damaged while in transit, please let me know before leaving negative or neutral feedback.  I value my 100% positive feedback rating and my priority is customer satisfaction, so if there is any problem, I will do my best to rectify it!  I'm only happy if you are!
+    <hr>
+    Beads, crystals and design is my passion - and my aim is to create pieces that make you feel a little bit (or alot!) special.  I am also able to custom make jewellery and have an enormous range of beads, colours, crystals and everything you could possibly need to bring YOUR imagination to life.  Please contact me if you have a special occasion, an outfit to match, or simply an idea......together we can create something that is all YOU!
+</div>
+<div class="text-center">
+  <strong>Price:</strong>
+  <%= number_to_currency(@product.price, :unit => "$") %>
+</div>
+<% if @current_user.present? %>
+  <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
+<% end %>
+ <br>
 <%= link_to 'Back', products_path %>
+ 

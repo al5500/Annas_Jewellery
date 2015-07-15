@@ -4,10 +4,10 @@
 <% if @current_user.present? && @current_user.admin? %>
   <%= link_to 'New Category', new_category_path %> <br> <hr>
 <% end %>
-
+<hr>  
 
     <% @categories.each do |category| %>
-      <%= link_to category.name, category %> <br> 
+      <%= link_to category.name, category %> <br> <hr>
         <% if @current_user.present? && @current_user.admin? %>
          <%= link_to 'Edit', edit_category_path(category) %> |
          <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %> <br> <hr>

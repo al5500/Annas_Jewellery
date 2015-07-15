@@ -9,10 +9,12 @@
   <% @products.each do |product| %>
   <div class="products">
     <strong>Product name:</strong> <%= link_to product.name, product_path %><br>
-    <strong>Description:</strong> <%= product.description %><br>
+    <strong>Description:</strong> <%= truncate(product.description, length: 150) %><br>
     <%= cl_image_tag(product.cl_id, :width => 100, :height => 150, :crop => :fill) %>  <br>
     <strong>Price:</strong><%= number_to_currency(product.price, :unit => "$") %>
-    <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+    <% if @current_user.present? %>
+      <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+    <% end %>
   </div>  
   <% end %>
 </p>
