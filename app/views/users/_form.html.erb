@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :full_name %>*<br>
     <%= f.text_field :name, :required => true %>
@@ -27,10 +26,7 @@
     <%= f.label :password_confirmation %>*<br>
     <%= f.password_field :password_confirmation, :required => true %>
   </div>
-  <div class="field">
-    <%= f.label :address %>* <br>
-    <%= f.text_field :address, :required => true %>
-  </div>
+ 
   <div class="field">
     <%= f.label :suburb %>* <br>
     <%= f.text_field :suburb, :required => true %>
