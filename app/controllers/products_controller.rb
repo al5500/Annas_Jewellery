@@ -45,6 +45,14 @@ class ProductsController < ApplicationController
       cloudinary = Cloudinary::Uploader.upload(params[:product]['file'].path)
       @product.cl_id = cloudinary['public_id']
     end
+    if params[:product]['image_one'].present?
+      cloudinary = Cloudinary::Uploader.upload(params[:product]['image_one'].path)
+      @product.image_one = cloudinary['public_id']
+    end
+    if params[:product]['image_two'].present?
+      cloudinary = Cloudinary::Uploader.upload(params[:product]['image_two'].path)
+      @product.image_two = cloudinary['public_id']
+    end
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -63,6 +71,14 @@ class ProductsController < ApplicationController
     if params[:product]['file'].present?
       cloudinary = Cloudinary::Uploader.upload(params[:product]['file'].path)
       product.cl_id = cloudinary['public_id']
+    end
+    if params[:product]['image_one'].present?
+      cloudinary = Cloudinary::Uploader.upload(params[:product]['image_one'].path)
+      @product.image_one = cloudinary['public_id']
+    end
+    if params[:product]['image_two'].present?
+      cloudinary = Cloudinary::Uploader.upload(params[:product]['image_two'].path)
+      @product.image_two = cloudinary['public_id']
     end
     respond_to do |format|
       if @product.update(product_params)

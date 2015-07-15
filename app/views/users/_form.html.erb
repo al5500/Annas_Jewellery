@@ -12,22 +12,49 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :full_name %>*<br>
+    <%= f.text_field :name, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.label :email %>*<br>
+    <%= f.text_field :email, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.label :password %>*<br>
+    <%= f.password_field :password, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation %>*<br>
+    <%= f.password_field :password_confirmation, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :address %>* <br>
+    <%= f.text_field :address, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :suburb %>* <br>
+    <%= f.text_field :suburb, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :city %>* <br>
+    <%= f.text_field :city, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :state %> *<br>
+    <%= f.text_field :state, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :post_code %>* <br>
+    <%= f.text_field :post_code, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :country %>* <br>
+    <%= f.text_field :country, :required => true %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+  <p>
+    *-required fields
+  </p>
 <% end %>

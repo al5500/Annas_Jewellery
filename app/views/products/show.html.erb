@@ -3,32 +3,54 @@
   <%= link_to 'Edit Product', edit_product_path(@product) %> <br>
 <% end %> <hr>
   
-<%= cl_image_tag(@product.cl_id, :width => 400, :height => 400, :class => 'imgg') %> 
-<div class="text-right">
-  <h2>
-    <%= @product.name %> <br>
-  </h2>
-  <strong>Category:</strong>
-  <% if @product.category %>
-    <%= @product.category.name %>
-  <% end %>
-</div>  
-<div class="well well-lg">
-  <strong>Description:</strong>
-  <%= @product.description %> <br>
+<h2>
+  <%= @product.name %> <br>
+</h2>
+<div class="content">
+  <div class="slidder">
+    <div class="slider">
+      <% if @product.cl_id.present? %>
+        <%= cl_image_tag(@product.cl_id) %>
+      <% end %>
+      <% if @product.image_one.present? %> 
+        <%= cl_image_tag(@product.image_one) %> 
+      <% end %>
+      <% if @product.image_two.present? %>
+        <%= cl_image_tag(@product.image_two) %>
+      <% end %>
+    </div>
+    <div class="slider-nav">
+      <% if @product.cl_id.present? %>
+        <%= cl_image_tag(@product.cl_id) %>
+      <% end %>
+      <% if @product.image_one.present? %> 
+        <%= cl_image_tag(@product.image_one) %> 
+      <% end %>
+      <% if @product.image_two.present? %>
+        <%= cl_image_tag(@product.image_two) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="desc-cont">
+    <strong>Category:</strong>
+      <% if @product.category %>
+        <%= @product.category.name %> <br>
+      <% end %>
+    <strong>Description:</strong>
+    <%= @product.description %> <br>
+        <strong>Price:</strong>
+        <%= number_to_currency(@product.price, :unit => "$") %>
+      <% if @current_user.present? %>
+        <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
+      <% end %>
+    </div> 
 </div>
 <div class="well">
     I do my best to ensure that my jewellery arrives to you in the same condition it left me so I carefully bubblewrap everything before gift-wrapping.  If by any chance the item has been damaged while in transit, please let me know before leaving negative or neutral feedback.  I value my 100% positive feedback rating and my priority is customer satisfaction, so if there is any problem, I will do my best to rectify it!  I'm only happy if you are!
     <hr>
     Beads, crystals and design is my passion - and my aim is to create pieces that make you feel a little bit (or alot!) special.  I am also able to custom make jewellery and have an enormous range of beads, colours, crystals and everything you could possibly need to bring YOUR imagination to life.  Please contact me if you have a special occasion, an outfit to match, or simply an idea......together we can create something that is all YOU!
 </div>
-<div class="text-center">
-  <strong>Price:</strong>
-  <%= number_to_currency(@product.price, :unit => "$") %>
-</div>
-<% if @current_user.present? %>
-  <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
-<% end %>
- <br>
+
+
 <%= link_to 'Back', products_path %>
  

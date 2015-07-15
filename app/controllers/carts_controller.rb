@@ -76,7 +76,7 @@ class CartsController < ApplicationController
 
   # DELETE /carts/1
   # DELETE /carts/1.xml
-  def destroy
+  def destroy 
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil

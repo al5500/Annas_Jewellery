@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'slick';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -76,7 +77,6 @@ body {
 }
 
 p, div.price_line {
-  margin-left: 100px;
   margin-top: 0.5em;
   margin-bottom: 0.8em;
 }
@@ -138,6 +138,34 @@ li {
 }
 
   
-h1, a{
+h1, h2, a{
   color: #700659;
+}
+
+.pHead{
+  top: -200px;
+}
+
+.slidder {
+  width: 400px;
+  border: outset 3px #C3037F; 
+  display: inline-block;
+  vertical-align: top;
+}
+
+.desc-cont {
+  width: 60%;
+  border: inset 2px #C3037F;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: #C3037F;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

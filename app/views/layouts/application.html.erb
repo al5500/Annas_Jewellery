@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.6/slick-theme.css"/>
   <%=  favicon_link_tag 'favicon.ico' %>
   <title>AnnasJewellery</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -22,6 +23,11 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
+          <li>
+            <% if @current_user.present? && @current_user.admin? %>
+              <%= link_to "Add new category", new_category_path %>
+            <% end %>  
+          </li>
           <li>
             <%= link_to 'All Categories', categories_path %>
           </li>
@@ -57,6 +63,6 @@
 </nav>
 <%= yield %>
 </div>
-
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.6/slick.min.js"></script>
 </body>
 </html>
