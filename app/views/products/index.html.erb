@@ -21,7 +21,10 @@
         <% if @current_user.present? %>
           <%= button_to 'Add to Cart', line_items_path(product_id: product), :class => "btn btn-warning" %>
         <% end %>
-      </div>
+        <% if @current_user.present? && @current_user.admin? %>
+         <hr> <%= button_to 'Destroy Product', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+        <% end %>
+        </div>
       </div>
       </div>
     <% end %>

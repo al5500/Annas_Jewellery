@@ -55,6 +55,8 @@
   </span>
 </div>
 
-
+<% if @current_user.present? && @current_user.admin? %>
+  <%= button_to('Delete Product', @product, :method => 'delete', :data => {:confirm => 'You sure homie???'}, :class => "btn btn-danger") %>
+<% end %> <br>
 <%= link_to 'Back', products_path %>
  
