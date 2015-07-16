@@ -10,6 +10,9 @@
       </ul>
     </div>
   <% end %>
+  <p>
+    This will be your shipping address.
+  </p>
   <div class="field">
     <%= f.label :full_name %>*<br>
     <%= f.text_field :name, :required => true %>
@@ -51,7 +54,7 @@
     <%= f.text_field :country, :required => true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-success"%>
   </div>
   <p>
     *-required fields

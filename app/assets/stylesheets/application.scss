@@ -169,3 +169,26 @@ h1, h2, a{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.btn-warning {
+  color: #fff;
+  background-color: rgba(195, 3, 127, 0.53);
+  border-color: #DE76B9;
+}
+
+.btn-warning:hover {
+  background-color: #C3037F
+}
+
+.well {
+ border: inset 4px #C3037F;
+ background-color: #F9DBEB; 
+}
+
+.blurb{
+  color: #700659;
+}
+
+.blurb2{
+  color: #B061C0;
+}

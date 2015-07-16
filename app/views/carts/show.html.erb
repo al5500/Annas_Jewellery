@@ -10,7 +10,7 @@
       <td><%= item.quantity %>&times;</td> 
       <td><%= item.product.name %></td> 
       <td class="item_price"><%= number_to_currency(item.total_price) %> <%= link_to 'Remove Item', item, :method => :delete, :confirm => "Are you sure?" %></td>
-      
+
     </tr> 
   <% end %> 
     <tr class="total_line"> 
@@ -18,7 +18,7 @@
       <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td> 
     </tr>
 </table>
-<%= button_to 'Clear cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
+<%= button_to 'Clear cart', @cart, :method => :delete, :confirm => 'Are you sure?', :class => "btn btn-danger" %>
 
 <%= form_tag charges_path do %>
   <article>

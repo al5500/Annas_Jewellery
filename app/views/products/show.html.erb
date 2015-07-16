@@ -41,14 +41,18 @@
         <strong>Price:</strong>
         <%= number_to_currency(@product.price, :unit => "$") %>
       <% if @current_user.present? %>
-        <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
+        <%= button_to 'Add to Cart', line_items_path(product_id: @product), :class => "btn btn-warning"  %>
       <% end %>
     </div> 
 </div>
 <div class="well">
+  <span class="blurb">
     I do my best to ensure that my jewellery arrives to you in the same condition it left me so I carefully bubblewrap everything before gift-wrapping.  If by any chance the item has been damaged while in transit, please let me know before leaving negative or neutral feedback.  I value my 100% positive feedback rating and my priority is customer satisfaction, so if there is any problem, I will do my best to rectify it!  I'm only happy if you are!
+  </span>
     <hr>
+  <span class="blurb2">
     Beads, crystals and design is my passion - and my aim is to create pieces that make you feel a little bit (or alot!) special.  I am also able to custom make jewellery and have an enormous range of beads, colours, crystals and everything you could possibly need to bring YOUR imagination to life.  Please contact me if you have a special occasion, an outfit to match, or simply an idea......together we can create something that is all YOU!
+  </span>
 </div>
 
 

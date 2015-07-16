@@ -40,7 +40,7 @@
     <%= f.select :category_id, Category.all.map {|category|[category.name, category.id]}, :include_blank => true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-success"%>
   </div>
   </div>
 <% end %>
