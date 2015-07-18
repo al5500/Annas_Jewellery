@@ -16,6 +16,10 @@
  *= require_tree .
  *= require_self
  */
+ html{
+  font-family: 'Lato', sans-serif;
+ }
+
 .container {
   margin: 0 auto;
   text-align: center;
@@ -30,6 +34,7 @@
 }
 body {
   background-color: whitesmoke;
+  font-family: 'Lato', sans-serif;
 }
 
 .entry{
@@ -190,5 +195,6 @@ h1, h2, a{
 }
 
 .blurb2{
-  color: #B061C0;
+  color: #C30580;
 }
+
