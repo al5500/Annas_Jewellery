@@ -8,7 +8,7 @@
 <hr>
 
 
-<% cache ['store', Product.last] do %>
+
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>
     
@@ -44,7 +44,7 @@
       </div>
     <% end %>
 
-  <% end %>
+  
 <% end %>
 
 
