@@ -150,19 +150,27 @@ h1, h2, a{
 .pHead{
   top: -200px;
 }
-
+.slick-slide img {
+    max-height: 100vh;
+}
 .slidder {
   width: 400px;
   border: outset 3px #C3037F; 
   display: inline-block;
   vertical-align: top;
+  height: 100%;
 }
-
+.slider{
+  height: 100%;
+}
 .desc-cont {
   width: 60%;
   border: inset 2px #C3037F;
   display: inline-block;
   vertical-align: top;
+}
+.slider-nav{
+  height: 100%;
 }
 
 .slick-prev:before, .slick-next:before {

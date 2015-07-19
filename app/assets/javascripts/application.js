@@ -24,6 +24,7 @@ $(document).ready(function(){
     adaptiveHeight: true,
     fade: true,
     slide: "img",
+    
    });
 
   $('.slider-nav').slick({

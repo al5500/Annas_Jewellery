@@ -10,13 +10,13 @@
   <div class="slidder">
     <div class="slider">
       <% if @product.cl_id.present? %>
-        <%= cl_image_tag(@product.cl_id) %>
+        <%= cl_image_tag(@product.cl_id, :width => 300, :height => 350) %>
       <% end %>
       <% if @product.image_one.present? %> 
-        <%= cl_image_tag(@product.image_one) %> 
+        <%= cl_image_tag(@product.image_one, :width => 300, :height => 350) %> 
       <% end %>
       <% if @product.image_two.present? %>
-        <%= cl_image_tag(@product.image_two) %>
+        <%= cl_image_tag(@product.image_two, :width => 300, :height => 350) %>
       <% end %>
     </div>
     <div class="slider-nav">
