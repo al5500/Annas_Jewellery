@@ -28,11 +28,14 @@ GEMS:
   Bootstrap
   Cloudinary
   Mandrill
+  Slick
+  Stripe
+
 
 Models:
   -User 
   -Category <— Has many products 
-  -Product <— Belongs to Category, has many lineItems
+  -Product <— Belongs to Category
   -Cart <— has many lineItems
   -line Item <— Belongs to product, cart
 ————————————————————————————————————————————— 
@@ -47,6 +50,7 @@ User:
   -sate:string
   -postcode:integer
   -country:string
+
 Category:
   -name:string
   -
@@ -59,10 +63,18 @@ Product:
   -image:two
   -category_id
   -price:decimal
+  -highlighted:boolean
+  -available:boolean
+  -quantity:integer
+  -on_sale:boolean
+  -list_price:decimal
+  -postage:decimal
+
 Cart:
   -lineitem id
 
 LineItem:
-  -cart id
-  -product id
-  -quantity
+  -cart_id:integer
+  -product_id:integer
+  -quantity:integer
+  
