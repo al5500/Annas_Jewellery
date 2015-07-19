@@ -38,12 +38,21 @@
       <% end %>
     <strong>Description:</strong>
     <%= @product.description %> <br>
-        <strong>Price:</strong>
-        <%= number_to_currency(@product.price, :unit => "$") %>
-      <% if @current_user.present? %>
-        <%= button_to 'Add to Cart', line_items_path(product_id: @product), :class => "btn btn-warning"  %>
-      <% end %>
-    </div> 
+    <% if @product.on_sale == true %>
+      <div class="list-price">
+        <strong>List Price:</strong>
+        <%= number_to_currency(@product.list_price, :unit => "$") %>
+      </div>
+        <strong>Sale Price:</strong>
+        <%= number_to_currency(@product.price, :unit => "$") %> <br>
+    <% else %>
+      <strong>Price:</strong>
+      <%= number_to_currency(@product.price, :unit => "$") %>
+    <% end %>
+    <% if @current_user.present? %>
+      <%= button_to 'Add to Cart', line_items_path(product_id: @product), :class => "btn btn-warning"  %>
+    <% end %>
+  </div> 
 </div>
 <div class="well">
   <span class="blurb">

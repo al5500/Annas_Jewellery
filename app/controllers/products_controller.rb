@@ -13,6 +13,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def on_sale
+    @products = Product.where(on_sale: true)
+
+    render :index
+  end
+
+  def bargain
+    @products = Product.where("price < 10.00")
+
+    render :index
+  end
 
   def search  
     if params[:commit] == "Find Product"

@@ -9,24 +9,22 @@
 </div>
 <hr>
 <% @products.each do |product| %>
-  <% if product.highlighted == true %>
-     <div class="products">
-      <% if product.cl_id.present? %>
+  <div class="products">
+    <% if product.cl_id.present? %>
         <%= cl_image_tag(product.cl_id, :width => 100, :height => 150, :crop => :fill) %>
-      <% elsif product.image_one.present? %>
+    <% elsif product.image_one.present? %>
         <%= cl_image_tag(product.image_one, :width => 100, :height => 150, :crop => :fill) %>
+    <% end %>
+    <h5><%= link_to product.name, product_path(product.id) %></h5>
+    <strong>Description:</strong> <%= truncate(product.description, length: 150) %>
+    <div class="price_line">
+      <strong>Price: </strong><%= number_to_currency(product.price) %>
+      <% if @current_user.present? %>
+        <%= button_to 'Add to Cart', line_items_path(product_id: product), :class => "btn btn-warning" %>
       <% end %>
-        <h5><%= link_to product.name, product_path(product.id) %></h5>
-        <strong>Description:</strong> <%= truncate(product.description, length: 150) %>
-        <div class="price_line">
-        <strong>Price: </strong><%= number_to_currency(product.price) %>
-        <% if @current_user.present? %>
-          <%= button_to 'Add to Cart', line_items_path(product_id: product), :class => "btn btn-warning" %>
-        <% end %>
-        <% if @current_user.present? && @current_user.admin? %>
-         <hr> <%= button_to 'Destroy Product', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
-        <% end %>
-        </div>
-      </div>
-  <% end %>
+      <% if @current_user.present? && @current_user.admin? %>
+       <hr> <%= button_to 'Destroy Product', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

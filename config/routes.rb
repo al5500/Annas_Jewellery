@@ -68,6 +68,7 @@ Rails.application.routes.draw do
 
   root :to => 'pages#landing'
 
+
   resources :line_items
   resources :carts
   resources :products
@@ -75,6 +76,9 @@ Rails.application.routes.draw do
   resources :users
   resources :password_resets
   resources :charges
+
+  get '/on_sale' => 'products#on_sale'
+  get '/bargain' => 'products#bargain'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

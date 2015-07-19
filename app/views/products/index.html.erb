@@ -21,8 +21,18 @@
       <% end %>
         <h5><%= link_to product.name, product_path(product.id) %></h5>
         <strong>Description:</strong> <%= truncate(product.description, length: 150) %>
-        <div class="price_line">
-        <strong>Price: </strong><%= number_to_currency(product.price) %>
+      <div class="price_line">
+        <% if product.on_sale == true %>
+      <div class="list-price">
+          <strong>List Price:</strong>
+          <%= number_to_currency(product.list_price, :unit => "$") %>
+      </div>
+          <strong>Sale Price:</strong>
+          <%= number_to_currency(product.price, :unit => "$") %> <br>
+        <% else %>
+          <strong>Price:</strong>
+          <%= number_to_currency(product.price, :unit => "$") %>
+        <% end %>
         <% if @current_user.present? %>
           <%= button_to 'Add to Cart', line_items_path(product_id: product), :class => "btn btn-warning" %>
         <% end %>
@@ -33,7 +43,7 @@
       </div>
       </div>
     <% end %>
- 
+
   <% end %>
 <% end %>
 

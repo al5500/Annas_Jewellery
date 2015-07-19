@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate
   before_filter :mailer_set_url_options
+
+  
+
   private
 
   def mailer_set_url_options

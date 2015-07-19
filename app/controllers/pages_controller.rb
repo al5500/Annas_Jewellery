@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def landing
-    @products = Product.all
+    @products = Product.where(highlighted: true)
   end
 
   def about
