@@ -12,10 +12,20 @@
     <strong>Description:</strong> <%= truncate(product.description, length: 150) %><br>
     <% if product.cl_id.present? %>
         <%= cl_image_tag(product.cl_id, :width => 100, :height => 150, :crop => :fill) %>
-      <% elsif product.image_one.present? %>
+    <% elsif product.image_one.present? %>
         <%= cl_image_tag(product.image_one, :width => 100, :height => 150, :crop => :fill) %>
-      <% end %> <br>
-    <strong>Price:</strong><%= number_to_currency(product.price, :unit => "$") %>
+    <% end %> <br>
+    <% if product.on_sale == true %>
+      <div class="list-price">
+          <strong>List Price:</strong>
+          <%= number_to_currency(product.list_price, :unit => "$") %>
+      </div>
+          <strong>Sale Price:</strong>
+          <%= number_to_currency(product.price, :unit => "$") %> <br>
+    <% else %>
+          <strong>Price:</strong>
+          <%= number_to_currency(product.price, :unit => "$") %>
+    <% end %>
     <% if @current_user.present? %>
       <%= button_to 'Add to Cart', line_items_path(product_id: product), :class => "btn btn-warning"  %>
     <% end %>
