@@ -4,8 +4,6 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    puts "^^^^^^^ Im in index"
-
     if params[:search_products]
       @products = Product.search(params[:search_products]).order("created_at DESC")
     else
@@ -14,11 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def on_sale
-    puts '^^^^^^^^^^im in on sale^^^^^^^^^^^'
     @products = Product.where(on_sale: true)
-    puts '^^^^^^^^^^^^'
-    puts @products.count
-    puts '^^^^^^^^^'
+
     render 'index'
   end
 
@@ -123,6 +118,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :cl_id, :price, :category_id, :highlighted, :available, :on_sale, :list_price)
+      params.require(:product).permit(:name, :description, :cl_id, :price, :category_id, :highlighted, :available, :on_sale, :list_price, :postage)
     end
 end

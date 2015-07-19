@@ -49,6 +49,8 @@
       <strong>Price:</strong>
       <%= number_to_currency(@product.price, :unit => "$") %>
     <% end %>
+    <br>
+    <strong>Postage:</strong><%= number_to_currency(@product.postage, :unit => "$") %>
     <% if @current_user.present? %>
       <%= button_to 'Add to Cart', line_items_path(product_id: @product), :class => "btn btn-warning"  %>
     <% end %>
