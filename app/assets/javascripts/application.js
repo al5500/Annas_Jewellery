@@ -24,7 +24,8 @@ $(document).ready(function(){
     adaptiveHeight: true,
     fade: true,
     slide: "img",
-    
+    autoplay: true
+
    });
 
   $('.slider-nav').slick({
@@ -33,7 +34,8 @@ $(document).ready(function(){
     asNavFor: '.slider',
     dots: true,
     centerMode: true,
-    focusOnSelect: true
+    focusOnSelect: true,
+    autoplay: true
   });
         
 });

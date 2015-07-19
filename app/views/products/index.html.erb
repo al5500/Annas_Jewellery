@@ -13,7 +13,11 @@
     <% cache ['entry', product] do %>
       <div class="entry">
       <div class="products">
+      <% if product.cl_id.present? %>
         <%= cl_image_tag(product.cl_id, :width => 100, :height => 150, :crop => :fill) %>
+      <% elsif product.image_one.present? %>
+        <%= cl_image_tag(product.image_one, :width => 100, :height => 150, :crop => :fill) %>
+      <% end %>
         <h5><%= link_to product.name, product_path(product.id) %></h5>
         <strong>Description:</strong> <%= truncate(product.description, length: 150) %>
         <div class="price_line">
