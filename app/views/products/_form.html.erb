@@ -39,6 +39,26 @@
     <%= f.label :category_id %><br>
     <%= f.select :category_id, Category.all.map {|category|[category.name, category.id]}, :include_blank => true %>
   </div>
+  <div class="field">
+    <%= f.label :highlighted %> <br>
+    <%= f.check_box :highlighted %>
+  </div>
+  <div class="field">
+    <%= f.label :available %> <br>
+    <%= f.check_box :available %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %> <br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :on_sale %> <br>
+    <%= f.check_box :on_sale %>
+  </div>
+  <div class="field">
+    <%= f.label :list_price %> <br>
+    $<%= f.text_field :list_price %>
+  </div>
   <div class="actions">
     <%= f.submit :class => "btn btn-success"%>
   </div>

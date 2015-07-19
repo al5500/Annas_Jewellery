@@ -11,6 +11,7 @@
 <% cache ['store', Product.last] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>
+    
       <div class="entry">
       <div class="products">
       <% if product.cl_id.present? %>
@@ -32,6 +33,7 @@
       </div>
       </div>
     <% end %>
+ 
   <% end %>
 <% end %>
 
