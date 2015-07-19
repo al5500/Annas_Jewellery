@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    # @products = Product.all
 
     if params[:search_products]
       @products = Product.search(params[:search_products]).order("created_at DESC")
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     puts '^^^^^^^^^^^^'
     puts @products.count
     puts '^^^^^^^^^'
-    render :index
+    render 'index'
   end
 
   def bargain
