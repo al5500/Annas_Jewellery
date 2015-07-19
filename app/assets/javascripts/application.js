@@ -17,25 +17,26 @@
 //= require jquery.slick
 
 $(document).ready(function(){
-   $('.slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    adaptiveHeight: true,
-    fade: true,
-    slide: "img",
-    autoplay: true
+  $(window).on('load', function(){
+    $('.slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      adaptiveHeight: true,
+      fade: true,
+      slide: "img",
+      autoplay: true
 
-   });
+    });
 
-  $('.slider-nav').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.slider',
-    dots: true,
-    centerMode: true,
-    focusOnSelect: true,
-    autoplay: true
-  });
-        
+    $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true,
+      autoplay: true
+    });
+  });     
 });
