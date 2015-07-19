@@ -14,8 +14,11 @@ class ProductsController < ApplicationController
   end
 
   def on_sale
+    puts '^^^^^^^^^^im in on sale^^^^^^^^^^^'
     @products = Product.where(on_sale: true)
-
+    puts '^^^^^^^^^^^^'
+    puts @products.count
+    puts '^^^^^^^^^'
     render :index
   end
 
