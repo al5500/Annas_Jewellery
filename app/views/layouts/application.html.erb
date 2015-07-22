@@ -30,7 +30,7 @@
             <% end %>  
           </li>
           <li>
-            <%= link_to 'All Categories', products_path %>
+            <%= link_to 'All Categories', categories_path %>
           </li>
             <% Category.order('name ASC').each do |category| %>
           <li>
