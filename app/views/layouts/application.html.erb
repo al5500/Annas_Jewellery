@@ -10,7 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!-- <script>
+<script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1453185518320484',
@@ -26,7 +26,7 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script> -->
+</script>
 <div class="container">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -90,12 +90,17 @@
   </div>
  </div>
 </nav>
-
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
 <% if @current_user %>
-  <p>Signed is as: <%= @current_user.name %></p>
-  <%= link_to "Sign Out", 'sign_out', method: :delete %>
+  <li>Signed in as: <%= @current_user.name %> - <%= image_tag(@auth['info']['image'], width: '50', height:'50', class: 'img-circle') %></li>
+  <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
 <% else %>
-  <%= link_to "auth/facebook" do %><%= image_tag('fblogin.png') %><% end %>
+  <li><%= link_to "Sign in with Facebook", 'auth/facebook' %></li>
 <% end %>
 <%= yield %>
 </div>
