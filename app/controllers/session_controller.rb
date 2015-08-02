@@ -6,7 +6,7 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to root_path, notice: "SIGNED IN!"
     else
       flash[:notice] = "Information Invalid."
       redirect_to login_path

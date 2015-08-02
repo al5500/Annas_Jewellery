@@ -4,6 +4,7 @@ gem 'mandrill-api'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -45,7 +46,7 @@ group :development, :test do
   gem 'meta_request'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem 'dotenv-rails'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

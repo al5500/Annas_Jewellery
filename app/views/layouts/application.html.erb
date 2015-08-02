@@ -10,6 +10,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1453185518320484',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script> -->
 <div class="container">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -73,6 +90,13 @@
   </div>
  </div>
 </nav>
+
+<% if @current_user %>
+  <p>Signed is as: <%= @current_user.name %></p>
+  <%= link_to "Sign Out", 'sign_out', method: :delete %>
+<% else %>
+  <%= link_to "auth/facebook" do %><%= image_tag('fblogin.png') %><% end %>
+<% end %>
 <%= yield %>
 </div>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.6/slick.min.js"></script>
