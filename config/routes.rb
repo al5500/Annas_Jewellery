@@ -1,4 +1,4 @@
-  # == Route Map
+# == Route Map
 #
 #              Prefix Verb   URI Pattern                         Controller#Action
 #                root GET    /                                   pages#landing
@@ -58,9 +58,14 @@
 #                     PATCH  /charges/:id(.:format)              charges#update
 #                     PUT    /charges/:id(.:format)              charges#update
 #                     DELETE /charges/:id(.:format)              charges#destroy
+#             on_sale GET    /on_sale(.:format)                  products#on_sale
+#             bargain GET    /bargain(.:format)                  products#bargain
 #               login GET    /login(.:format)                    session#new
 #                     POST   /login(.:format)                    session#create
 #                     DELETE /login(.:format)                    session#destroy
+#                     GET    /auth/:provider/callback(.:format)  sessions#create
+#                     GET    /auth/:provider/failure(.:format)   sessions#failure
+#            sign_out DELETE /sign_out(.:format)                 sessions#destroy
 #               about GET    /about(.:format)                    pages#about
 #
 

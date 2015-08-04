@@ -10,23 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1453185518320484',
-      xfbml      : true,
-      version    : 'v2.4'
-    });
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 <div class="container">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -90,20 +74,6 @@
   </div>
  </div>
 </nav>
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-<% if @current_user %>
-  <li>Signed in as: <%= @current_user.name %> - <%= image_tag(@auth['info']['image'], width: '50', height:'50', class: 'img-circle') %></li>
-  <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
-<% else %>
-  <li><%= link_to "Sign in with Facebook", 'auth/facebook' %></li>
-  <li><%= link_to "Sign in with Twitter", 'auth/twitter' %></li>
-  <li><%= link_to "Sign in with Google", "auth/google_oauth2" %></li>
-<% end %>
 <%= yield %>
 </div>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.6/slick.min.js"></script>

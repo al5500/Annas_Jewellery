@@ -12,6 +12,14 @@
 #  auth_token             :string
 #  password_reset_token   :string
 #  password_reset_sent_at :datetime
+#  address                :string
+#  suburb                 :string
+#  city                   :string
+#  state                  :string
+#  post_code              :integer
+#  country                :string
+#  provider               :string
+#  uid                    :string
 #
 
 class User < ActiveRecord::Base
@@ -29,7 +37,7 @@ class User < ActiveRecord::Base
       provider: auth['provider'],
       uid: auth['uid'],
       name: auth['info']['name']
-      )
+    )
   end
 
   def send_password_reset
